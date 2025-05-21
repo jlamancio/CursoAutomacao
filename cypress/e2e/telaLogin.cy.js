@@ -2,8 +2,7 @@
 
 describe('Testar tela de login', () => {
   beforeEach(() => {
-  /* Este exércício é o resultado da aula: 04; os próximos passos agora é refatorar e otimizar este código. */
-    cy.visit('http://127.0.0.1:5500/login.html')
+    cy.visit('/login.html')
   })
   it('Login - ok', () => {
 
