@@ -9,7 +9,8 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
       
-      baseUrl: "http://127.0.0.1:5500/'"
+      /* baseUrl: "http://127.0.0.1:5500/'" */
+      baseUrl: "http://localhost:56165/'"
       chromeWebSecurity: false
       defaultCommandTimeout: 10000        /* altera valor padrão de timeout de 4'' para 10 '' */
       video: true                         /* modo: headless                                */
