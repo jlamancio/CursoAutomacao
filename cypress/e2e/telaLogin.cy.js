@@ -18,10 +18,10 @@ describe('Testar tela de login', () => {
     cy.get('input[id="login"]')
       .should('be.visible')
       .click()
-      .type('Jose Luis')
+      .type('admin')
 
     cy.get('input[id="login"]')
-      .should('have.value', 'Jose Luis')
+      .should('have.value', 'admin')
 
     /* Diversas formas de localizar e validar o elemento : Senha  */
     cy.get('input[class="input-form"]').eq(1)
@@ -29,10 +29,10 @@ describe('Testar tela de login', () => {
     cy.get('input[id="senha"]')
       .should('be.visible')
       .click()
-      .type('123456789')
+      .type('admin')
 
     cy.get('input[id="senha"]')
-      .should('have.value', '123456789')
+      .should('have.value', 'admin', { log: false})
 
     /* Localizar e validar o elemento image                      */
     cy.get('img[src="./images/login.png"').should('be.visible')
