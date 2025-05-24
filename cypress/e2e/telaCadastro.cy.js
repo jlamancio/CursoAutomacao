@@ -68,7 +68,10 @@ describe('Testar tela principal', () => {
 
     context('Cadastrar usuário', () => {
         it('Cadastrar novo usuário', () => {
-            cy.get(inicial.CampoNome).clear().type(randomName)
+            
+            cy.CadastraUser()
+
+ /*           cy.get(inicial.CampoNome).clear().type(randomName)
             cy.get(inicial.CampoTelefone).clear().type(randomPhone)
             cy.get('input[type="date"]').clear().type('2025-05-23')
             cy.get('input[id="rdoMasculino"]').check().should('be.checked')
@@ -76,6 +79,7 @@ describe('Testar tela principal', () => {
 
             cy.get(inicial.BtnExcluir).as('btnExcluir')
             cy.contains('button', 'Alterar').should('be.visible').as('btnAlterar')
+  */
         })
     })
 

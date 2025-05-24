@@ -4,5 +4,4 @@ export const ELEMENTS = {
     CampoTelefone: 'input[id="numero"]',
     BtnExcluir: 'button:contains(Excluir)'
 
-
 }
