@@ -1,5 +1,11 @@
 /// <reference types="cypress"/>
 
+import { faker } from '@faker-js/faker'
+
+const randomName = faker.name.fullName()
+const randomPhone = faker.phone.number()
+const randomBirthDate = faker.date.birthdate() 
+
 describe('Testar tela principal', () => {
     beforeEach(() => {
         cy.visit('/')
@@ -60,15 +66,14 @@ describe('Testar tela principal', () => {
 
     context('Cadastrar usuário', () => {
         it('Cadastrar novo usuário', () => {
-            cy.get('input[id="txtNome"]').clear().type('José Luis Amancio')
-            cy.get('input[id="numero"]').clear().type('+55(11)99503-4612')
+            cy.get('input[id="txtNome"]').clear().type(randomName)
+            cy.get('input[id="numero"]').clear().type(randomPhone)
             cy.get('input[type="date"]').clear().type('2025-05-23')
             cy.get('input[id="rdoMasculino"]').check().should('be.checked')
             cy.get('input[id="btnCadastrarSalvar"]').click()
 
             cy.contains('button', 'Excluir').should('be.visible').as('btnExcluir')
             cy.contains('button', 'Alterar').should('be.visible').as('btnAlterar')
-
         })
     })
 
