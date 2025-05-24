@@ -6,6 +6,8 @@ const randomName = faker.name.fullName()
 const randomPhone = faker.phone.number()
 const randomBirthDate = faker.date.birthdate() 
 
+const inicial = require('../support/elements').ELEMENTS
+
 describe('Testar tela principal', () => {
     beforeEach(() => {
         cy.visit('/')
@@ -66,13 +68,13 @@ describe('Testar tela principal', () => {
 
     context('Cadastrar usuário', () => {
         it('Cadastrar novo usuário', () => {
-            cy.get('input[id="txtNome"]').clear().type(randomName)
-            cy.get('input[id="numero"]').clear().type(randomPhone)
+            cy.get(inicial.CampoNome).clear().type(randomName)
+            cy.get(inicial.CampoTelefone).clear().type(randomPhone)
             cy.get('input[type="date"]').clear().type('2025-05-23')
             cy.get('input[id="rdoMasculino"]').check().should('be.checked')
             cy.get('input[id="btnCadastrarSalvar"]').click()
 
-            cy.contains('button', 'Excluir').should('be.visible').as('btnExcluir')
+            cy.get(inicial.BtnExcluir).as('btnExcluir')
             cy.contains('button', 'Alterar').should('be.visible').as('btnAlterar')
         })
     })
