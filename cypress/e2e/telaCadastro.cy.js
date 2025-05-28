@@ -15,7 +15,7 @@ describe('Testar tela principal', () => {
 
     context('Validação dos elementos da tela principal da aplicação', () => {
         it('Valida texto de abertura da tela principal', () => {
-            cy.contains('h1', 'Curso Automação de Testes Bàsico').should('be.visible')
+            cy.contains('h1', 'Curso Automação de Testes Bàsico').as(TituloPagina).should('be.visible')
 
         })
 
@@ -55,7 +55,7 @@ describe('Testar tela principal', () => {
 
         it('Validação da tabela exibida na tela principal', () => {
             cy.contains('h2', 'Tabela').should('be.visible')
-
+            
             cy.get('tr').find('th').eq(0).should('have.text', 'Id')
             cy.get('tr').find('th').eq(1).should('have.text', 'Nome')
             cy.get('tr').find('th').eq(2).should('have.text', 'Telefone')
@@ -69,29 +69,21 @@ describe('Testar tela principal', () => {
     context('Cadastrar usuário', () => {
         it('Cadastrar novo usuário', () => {
             
-            cy.CadastraUser()
+            cy.CadastraUser()   // Command.js
 
- /*           cy.get(inicial.CampoNome).clear().type(randomName)
-            cy.get(inicial.CampoTelefone).clear().type(randomPhone)
-            cy.get('input[type="date"]').clear().type('2025-05-23')
-            cy.get('input[id="rdoMasculino"]').check().should('be.checked')
-            cy.get('input[id="btnCadastrarSalvar"]').click()
-
-            cy.get(inicial.BtnExcluir).as('btnExcluir')
-            cy.contains('button', 'Alterar').should('be.visible').as('btnAlterar')
-  */
         })
     })
 
     context('Validação dos dados cadastrados na tabela', () => {
-        it('Validar registro', () => {
+        it.only('Validar registro', () => {
             cy.get('input[id="txtNome"]').clear().type('José Luis Amancio')
             cy.get('input[id="numero"]').clear().type('+55(11)99503-4612')
             cy.get('input[type="date"]').clear().type('2025-05-23')
             cy.get('input[id="rdoMasculino"]').check().should('be.checked')
             cy.get('input[id="btnCadastrarSalvar"]').click()
 
-
+            /* A9 */
+            
             cy.get('tbody[id="tbodyResultados"]').find('tr').find('td').eq(0)
                 .invoke('text')
                 .then((PegaId) => {

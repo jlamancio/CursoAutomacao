@@ -1,7 +1,6 @@
 {
   "name": "cursoautomacao",
   "version": "1.0.0",
-  "description": "",
   "main": "myscript.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,5 +16,14 @@
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
     "cypress-iframe": "^1.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlamancio/CursoAutomacao.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jlamancio/CursoAutomacao/issues"
+  },
+  "homepage": "https://github.com/jlamancio/CursoAutomacao#readme",
+  "description": ""
 }

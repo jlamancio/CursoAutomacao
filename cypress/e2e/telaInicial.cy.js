@@ -17,7 +17,8 @@ describe('Testes na tela index do projeto', () => {
 
     it.only('Testar botão voltar', () =>{
         cy.visit('/texto.html');
-        cy.get('a[href="./index.html"]').should('be.visible', 'Voltar Ao ìnicio').click()
+        cy.get('a[href="./index.html"]').as('btnVoltarAoInicio')
+        .should('be.visible', 'Voltar Ao ìnicio').click()
     })
 
       it.only('Validar retorno após clicar no botão "Voltar', () =>{

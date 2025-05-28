@@ -33,36 +33,7 @@ Cypress.Commands.add('CadastraUser', () => {
 
     cy.get('button')
         .contains('Excluir').click()
-
-
-    /*Cadastrar um novo Usuario - Para testar o BTN ALterar */
-
-    cy.get('input[id="txtNome"]')
-        .type('Gustavo Automatizador')
-
-    cy.get('input[id="numero"]')
-        .type('4899999999')
-
-    cy.get('input[type="date"]')
-        .click().type('2023-04-26')
-
-    cy.get('input[id="rdoMasculino"]')
-        .check()
-
-    cy.get('input[id="btnCadastrarSalvar"]')
-        .click()
-
-    cy.get('button')
-        .contains('Alterar').click()
-
-    cy.get('input[id="numero"]')
-        .clear()
-
-    cy.get('input[id="btnCadastrarSalvar"]')
-        .click()
-
-})
-
+    
 
 
 Cypress.Commands.add('ValidaH1', ()=>{
@@ -95,3 +66,4 @@ Cypress.Commands.add('authority', ()=>{
 
 
 
+})
