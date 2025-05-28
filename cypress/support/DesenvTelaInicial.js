@@ -39,8 +39,12 @@ class ClassTelaInicial {
 
     }
 
+    /* Como utilizar o Real Press (biblioteca)   
+    cy.get('input[id="txtNome"]').as('Nome').should('be.visible')
+      .click()
+      .wait(10000).realPress('Tab').realPress('5')
 
-
+     */
 }
 
 
